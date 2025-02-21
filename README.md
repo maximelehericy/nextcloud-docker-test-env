@@ -32,6 +32,10 @@ And with a little bit of extra work, I got working a full galaxy of stuff that i
 
 I have now a nearly complete production system, and my work would have probably be a lot easier if I had had this before. So here is the guide, and I hope it will help others having a proper test lab that will in the end serve Nextcloud development, performance and stability.
 
+# requirements
+
+Everything that follow has been done on Linux. I don't know how easily it can be ported on other OS.
+
 # principles and guidelines
 
 A few key principles, guidelines, that helped me design what follows:
@@ -49,7 +53,7 @@ A few key principles, guidelines, that helped me design what follows:
 
 # a quick overview of the architecture
 
-The /etc/hosts file from the computer acts as DNS: every new web service should be declared in the /etc/hosts file.
+The /etc/hosts file from the computer acts as DNS: every new service accessible from the host should be declared in the /etc/hosts file.
 
 Most of the domain entries  from /etc/hosts are mapped to a single fixed ip, the one of an nginx reverse proxy that serves web services hosted in docker containers.
 
@@ -86,11 +90,11 @@ By default, a container is in the docker "bubble", and not accessible from the h
 
 The usual things one can find on forums is to bind container ports to ports on the host system. For example, one could bind ports 80 and 443 to an apacbe container, and that would be sufficient to access the website in the apache container.
 
-This is a very quick and easy approach, but quickly there is not enough ports to play with or it becomes a memory game to remember which port is bound to which service...
+This is a very fast and easy approach, but quickly there is not enough ports to play with or it becomes a memory game to remember which port is bound to which service...
 
 But going a bit further with docker networks enables one to have a production like system, with domain names, trusted TLS certificates, avoid all sort of troubles of port conflicts or self signed certificates.
 
-Want to visit website1 ? Go to https://website1.your.local.domain.com. Want to visit website2 ? Go to https://website1.your.local.domain.com.
+Want to visit website1 ? Go to https://website1.your.local.domain.com. Want to visit website2 ? Go to https://website2.your.local.domain.com.
 As simple as that :)
 
 # SETUP A LOCAL TEST ENV WITH DOCKER
@@ -102,19 +106,19 @@ Before starting to play with docker, we need a few things.
 ### a domain name with a valid wildcard certificate for all subdomains
 
 THE number 1 thing.
-That is done with the Let's encrypt DNS challenge.
+That is done with the Let's encrypt DNS challenge: go [there](./doc/DNSchallenge.md) to follow the guide.
 
 ### install docker
 
-Bla bla bla bla
+Go [there](https://docs.docker.com/engine/install/) and follow the installation procedure matching your OS.
 
 ### add your host user to the docker group
 
-So you don't have to sudo all the time
+So you don't have to sudo all the time. Follow the instructions [there](https://docs.docker.com/engine/install/linux-postinstall/)
 
 ### structure a directory
 
-So it is not going to be the mess in three days
+ ??? So it is not going to be the mess in three days.
 
 ### get notes somewhere
 
