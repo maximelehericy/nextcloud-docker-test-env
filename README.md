@@ -116,10 +116,6 @@ Go [there](https://docs.docker.com/engine/install/) and follow the installation 
 
 So you don't have to sudo all the time. Follow the instructions [there](https://docs.docker.com/engine/install/linux-postinstall/)
 
-### structure a directory
-
- ??? So it is not going to be the mess in three days.
-
 ### get notes somewhere
 
 To track things that your brain will forget
@@ -128,11 +124,7 @@ To track things that your brain will forget
 
 ### set the network layer
 
-- database
-- apps-push ??
-- apps
-
-The apps network is a bit different from the others, we will why later on.
+Follow the network documentation [there](./doc/Network%20setup.md)
 
 ### configure a reverse proxy for SSL termination
 
