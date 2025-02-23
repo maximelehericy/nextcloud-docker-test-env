@@ -1,3 +1,5 @@
 *.crt
 *.pem
 *.code-workspace
+*.env
+*.bkp

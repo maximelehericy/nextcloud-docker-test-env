@@ -1,57 +1,53 @@
-# objectives of this guide
+# Objective of this project
 
-Since I have started to work for Nextcloud, I have always felt moments where the tools I had for testing Nextcloud were not enough. At the beginning, I relied on LTDs, but it is sometimes slow, sometimes it bugs and I can't help but asking sysadmin to the recue, sometimes I am on the train and getting crazy because of the intermitent internet connection. Also when custo for customer C collides with custo of customer A and B in the middle of a demo...
+Provide a test environment where it is easy to test Nextcloud features, integrations, under different architectures.
 
-So I started to play with docker, having my first nextcloud instance deployed and accessed on localhost, and started to taste to the ease of dropping and recreating everything from scratch in a minute. But as Nextcloud is barely a standalone app but rather integrates with a galaxy of stuff that start to be pretty large, localhost and port mapping, quickly gets limited... SSL encrytpion had been another kind of problem...
+✅ already available
+⌛ available soon
+⚙️ under construction
 
-I tested for some time to work on a hosted VM, where I could install everything I needed, and easily get trusted SSL certificates.
+This project implemented **Nextcloud** in the following ways:
+- ✅ Standalone Nextcloud
+- ✅ Federated Nextcloud instances (with several standalone instances)
+- ⌛ Nextcloud Global Scale
 
-But again it drove me crazy trying to ssh on the train... and "mine de rien", installing VMs takes time...
+This project also provides the following **integrations**:
+- ✅ Nextcloud Office (based on Collabora Online, for online editiong of office files)
+- ⌛ Nextcloud talk high-performance backend (for performant videoconference)
+- ⌛ Nextcloud talk recording backend
+- ⌛ Nextcloud whiteboard
+- ⌛ Nextcloud AppAPI docker socket proxy (for AI services)
+- ⌛ Only Office (for online editiong of office files)
+- ⌛ Open Project (for project management)
 
-So I went back to docker... on a Quimper - Berlin train trip i searched for a way of having trusted certificates locally on my computer. I found a solution in Berlin, and that unlocked a new era for my local testing lab: i could now access all my services running in docker over https, using real domain names.
+This project also provides a few **other key components** that are nearly always included in real-life Nextcloud deployments or useful for testing purposes:
+- ✅ Adminer, a web based database client
+- ⌛ Keycloak as SAML or OIDC identity provider for SSO
+- ⌛ Stalwart-mail as mail server
+- ⚙️ LDAP
 
-To overcome the ports mapping problem of docker (docker gateway has only one port 443 🙃), quickly I had a reverse proxy in place to access various nextcloud instances running at the same time.
-
-I could now play with federation, have collabora or only office working not on my computer ip but on real domain names, like in production.
-
-And with a little bit of extra work, I got working a full galaxy of stuff that is useful for a Nextcloud demo or some crazy Nextcloud tests to check and answer a prospect request:
-
-- collabora
-- a whiteboard
-- only office
-- open project
-- appapi docker socket proxy
-- federated instances
-- a global scale setup with a lookup server
-- an identity provider
-- a mail server
-- talk hpb
-- talk recording backend
-- ldap
-- ...
-
-I have now a nearly complete production system, and my work would have probably be a lot easier if I had had this before. So here is the guide, and I hope it will help others having a proper test lab that will in the end serve Nextcloud development, performance and stability.
-
-# requirements
+# Requirements
 
 Everything that follow has been done on Linux. I don't know how easily it can be ported on other OS.
 
-# principles and guidelines
+# Design principles
 
-A few key principles, guidelines, that helped me design what follows:
+A few key principles guided the design of this project:
 
-- should run 100% locally, internet access is not mandatory
-- I want to understand the things I deploy (no AIO-like automated deployment)
-- I want to understand and have a clear picture of the network architecture. Many problems come from the network, understanding them is key to solve issues
-- I want to be able to deploy as many nextcloud instances as I need
-- on the other hand, I want as many other components as possible to be shared among all my nextcloud instances (e.g. to save on hardware resources, I don't want to spin up one collabora server per nextcloud instance)
-- every web service should be accessible over https
-- each nextcloud instance should be configured in a state of the art way, with cron and notify_push working (thks julius)
-- be able to deploy as many services as needed (no port mapping/publishing)
-- access to configuration files as easy as possible (work in progress)
-- ability to trash and rebuild in a minute (work in progress)
+- Should run 100% locally, internet access is not mandatory
+- Have little automation, so it is easier to understand what are the interactions between the components
+- Provide a clear picture of the network architecture. Many problems come from the network, understanding them is key to solve issues
+- Be able to deploy as many parallel Nextcloud instances as needed
+- Share as many services as possible (but Nextcloud) to save on hardware resources, and simulate real-life use-cases
+- Every web service should be accessible over HTTPS
+- Each Nextcloud instance should be "state of the art" configured, with cron and notify_push working (thanks @juliusknorr)
+- Be able to deploy as many services as needed (no port mapping/publishing)
+- Access to configuration files as easy as possible (work in progress)
+- Ability to trash and rebuild in a minute (work in progress)
 
-# a quick overview of the architecture
+# A quick overview of the architecture
+
+![Network architecture](./doc/network%20architecture.webp "Network architecture")
 
 # Unfamiliar with docker ?
 
