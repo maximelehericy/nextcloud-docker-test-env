@@ -94,9 +94,17 @@ So you don't have to sudo all the time. Follow the instructions [there](https://
 
 Follow the network documentation [there](./doc/Network%20setup.md)
 
+### Tweak your `/etc/hosts` file
+
+To your `/etc/hosts` file, add the following line:
+
+```
+172.19.0.1 test.<yourdomain> nc1.<yourdomain> nc2.<yourdomain>
+```
+
 ### Configure a reverse proxy for SSL termination
 
-SSL is beautiful to secure client-server communications, but is sometimes a pain to handle for the beginner. For that, we will use nginx, and customize a bit the default docker image. See everything [here](./apps/reverseproxy/README.md)).
+SSL is beautiful to secure client-server communications, but is sometimes a pain to handle for the beginner. For that, we will use nginx, and customize a bit the default docker image. See everything [here](./apps/reverseproxy/README.md).
 
 ### Launch your first nextcloud instance
 
@@ -106,39 +114,3 @@ Each sercice that should be launched is decribed in a yaml file, where one can s
 
 Docker compose does an interesting thing when launching a set of servives: it prefixes all the services with a project label, so it is easy to know which containers are siblings. If not specified, a random name is applied, but we will prpfit from that feature to name our different test instances: nc1, nc2, nc3, test, tutorial, sse, etc.
 
-#### prepare the yaml files for the services
-
-#### structure the directory if you need to map volumes
-
-#### run docker compose up
-
-#### add an entry for the new service in your /etc/hosts file
-
-#### tweak the nc.conf file for the reverseproxy to serve the newly created container
-
-#### open your browser and access the service !
-
-# going further
-
-## list of usefull services
-
-- adminer: web based database client
-- stalwart-mail: mail server
-- keycloak: to enable sso
-- all the galaxy of services around nextcloud:
-  - nextcloud talk hpb
-  - nextcloud talk recording backend
-  - openproject
-  - whiteboard
-  - appapi
-  - collabora
-  - onlyoffice
-
-## what it is possible to test
-
-- federation (files and talk)
-- global scale
-- database clustering, replication...
-- server-side encryption
-- oidc, saml
-- e2ee
