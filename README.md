@@ -24,7 +24,7 @@ This project also provides a few **other key components** that are nearly always
 - ✅ Adminer, a web based database client
 - ⌛ Keycloak as SAML or OIDC identity provider for SSO
 - ⌛ Stalwart-mail as mail server
-- ⚙️ LDAP
+- ⚙️ LDAP for user and group management
 
 # Requirements
 
@@ -53,50 +53,54 @@ A few key principles guided the design of this project:
 
 Read [here](./doc/familiarizewithdocker.md)
 
-# SETUP A LOCAL TEST ENV WITH DOCKER
+# Setup
 
-## first things first
+## First things first
 
-Before starting to play with docker, we need a few things.
+Before starting to play with docker, you will need a few things:
 
-### a domain name with a valid wildcard certificate for all subdomains
+1. get a valid wildcard SSL certificate
+2. install docker
+3. add your host user to the docker group
 
-THE number 1 thing. There are two ways for this:
+### Getting a valid wildcard certificate
+
+This is the number one thing. **Please do not go bypass this step**. Getting valid SSL certificates will definitely make the next setup steps way easier, as well as easing a lot all the integrations between Nextcloud and its satellites.
+
+There are two pretty easy ways for this:
 
 1. Use the Let's encrypt DNS challenge, see explanation [there](./doc/letsencryptDNSchallenge.md)
 2. Use mkcert, see [here](https://github.com/FiloSottile/mkcert)
 
-NB: the first option is a bit more complex as it requires you to purchase a domain name, but allows you to setup a real email server (stalwart-mail), which might not be possible with mkcert.
+||Let's encrypt DNS challenge|mkcert|
+|---|:---:|:---:|
+|**Advantages**|really similar to production|very quick to setup|
+||enables a local IMAP & SMTP<br /> mail server integration||
+|**Drawbacks**|need to purchase a domain name|no IMAP integration possible|
 
-### install docker
+As Nextcloud features an email client, the Let's Encrypt DNS challenge can be a better choice.
+
+### Install docker
 
 Go [there](https://docs.docker.com/engine/install/) and follow the installation procedure matching your OS.
 
-### add your host user to the docker group
+### Add your host user to the docker group
 
 So you don't have to sudo all the time. Follow the instructions [there](https://docs.docker.com/engine/install/linux-postinstall/)
 
-### get notes somewhere
+## Dive into the docker setup
 
-To track things that your brain will forget
-
-## dive into docker setup
-
-### set the network layer
+### Create the network layer
 
 Follow the network documentation [there](./doc/Network%20setup.md)
 
-### configure a reverse proxy for SSL termination
+### Configure a reverse proxy for SSL termination
 
 SSL is beautiful to secure client-server communications, but a pain to handle for the noob.
 
 For that, we will use nginx, and customize a bit the default docker image. See everything [here](./apps/reverseproxy/README.md)).
 
-### concept
-
-Each service has its own reverse proxy conf file to keep things well organized.
-
-### set up the first nextcloud instance
+### Launch your first nextcloud instance
 
 For this, we will use docker compose. Docker compose is a tool that allows to launch at once several containers, unlike the docker run command we used above.
 
