@@ -1,0 +1,19 @@
+# version: "4.22.1"
+
+networks:
+  local:
+    driver: bridge
+
+services:
+  cache:
+    image: redis:7.4.1
+    restart: unless-stopped
+    # volumes:
+    #  - redis-data:/var/lib/redis
+    #  - redis.conf:/usr/local/etc/redis/redis.conf
+    networks:
+      - local
+
+  nextcloud:
+    environment:
+      - REDIS_HOST=cache
