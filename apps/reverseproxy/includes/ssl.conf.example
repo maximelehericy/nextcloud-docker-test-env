@@ -1,0 +1,9 @@
+ssl_certificate /etc/letsencrypt/live/<yourdomain>/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/<yourdomain>/privkey.pem;
+ssl_session_timeout 1d;
+ssl_session_cache shared:SSL:50m;
+ssl_session_tickets off;
+ssl_protocols TLSv1.2 TLSv1.3;
+ssl_ciphers TLS_AES_256_GCM_SHA384:TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSAAES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES256-GCM-SHA384:DHE-RSAAES128-GCM-SHA256:DHE-RSA-CHACHA20-POLY1305;
+ssl_ecdh_curve auto;
+ssl_prefer_server_ciphers on;
