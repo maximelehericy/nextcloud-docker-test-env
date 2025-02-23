@@ -1,0 +1,71 @@
+#version: "4.1.5"
+
+volumes:
+  nextcloud:
+    driver: local
+
+networks:
+  apps:
+    external: true
+  push:
+    external: true
+  local:
+    driver: bridge
+
+services:
+  nextcloud:
+    image: nextcloud:30.0.2
+    restart: unless-stopped
+    networks:
+      - apps
+      - local
+    volumes:
+      - nextcloud:/var/www/html:z
+      - ${PWD}/apps/nextcloud/standard/hooks/pre-installation:/docker-entrypoint-hooks.d/pre-installation
+      - ${PWD}/apps/nextcloud/standard/hooks/post-installation:/docker-entrypoint-hooks.d/post-installation
+      - ${PWD}/apps/nextcloud/standard/hooks/pre-upgrade:/docker-entrypoint-hooks.d/pre-upgrade
+      - ${PWD}/apps/nextcloud/standard/hooks/post-upgrade:/docker-entrypoint-hooks.d/post-upgrade
+      - ${PWD}/apps/nextcloud/standard/hooks/before-starting:/docker-entrypoint-hooks.d/before-starting
+    environment:
+      - NEXTCLOUD_ADMIN_USER=admin
+      - NEXTCLOUD_ADMIN_PASSWORD=admin
+      - REDIS_HOST=cache
+      - TRUSTED_PROXIES=127.0.0.1 ::1 172.16.0.0./12
+      - OVERWRITEPROTOCOL=https
+    env_file: ${PWD}/apps/nextcloud/nextcloud.env
+    depends_on:
+      - db
+      - cache
+
+  cron:
+    image: nextcloud:30.0.2
+    restart: unless-stopped
+    networks:
+      - local
+    volumes:
+      - nextcloud:/var/www/html:z
+    environment:
+      - NEXTCLOUD_ADMIN_USER=admin
+      - NEXTCLOUD_ADMIN_PASSWORD=admin
+      - REDIS_HOST=cache
+    depends_on:
+      - db
+      - cache
+      - nextcloud
+    entrypoint: /cron.sh
+
+  push:
+    image: notify_push
+    restart: unless-stopped
+    networks:
+      - push
+      - local
+    environment:
+      RUST_LOG: debug
+      #VIRTUAL_HOST: push.local.mlh.ovh
+      #VIRTUAL_PORT: 7867
+      DATABASE_URL: mariadb://nextcloud:nextcloud@db/nextcloud
+      REDIS_URL: redis://cache
+      NEXTCLOUD_URL: http://nextcloud
+
+

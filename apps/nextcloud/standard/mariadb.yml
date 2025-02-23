@@ -1,0 +1,35 @@
+# yaml file for nextcloud DB
+
+volumes:
+  db:
+    driver: local
+
+networks:
+  databases:
+    external: true
+    name: databases
+  local:
+    driver: bridge
+
+services:
+  db:
+    image: mariadb:10.11
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW              
+    environment:
+      - MYSQL_ROOT_PASSWORD=example
+      - MYSQL_PASSWORD=nextcloud
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+    restart: unless-stopped
+    volumes:
+      - db:/var/lib/mysql/
+    networks:
+      - databases
+      - local
+
+  nextcloud:
+    environment:
+      - MYSQL_PASSWORD=nextcloud
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db
