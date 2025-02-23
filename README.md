@@ -110,7 +110,8 @@ SSL is beautiful to secure client-server communications, but is sometimes a pain
 
 For this, we will use docker compose. Docker compose is a tool that allows to launch at once several containers, unlike the docker run command we used above.
 
-Each sercice that should be launched is decribed in a yaml file, where one can specify the networks, volumes, docker images that services base on, environment variables, etc.
+Each sercice necessary for Nextcloud to work is decribed in a yaml file, where networks, volumes, docker images that services base on, environment variables, etc. are defined.
 
-Docker compose does an interesting thing when launching a set of servives: it prefixes all the services with a project label, so it is easy to know which containers are siblings. If not specified, a random name is applied, but we will prpfit from that feature to name our different test instances: nc1, nc2, nc3, test, tutorial, sse, etc.
+To follow the tutorial to spin up a first test Nextcloud instance, go [there](./apps/nextcloud/standard/README.md)
+
 
