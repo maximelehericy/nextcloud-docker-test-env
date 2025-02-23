@@ -39,7 +39,7 @@ A few key principles guided the design of this project:
 - Provide a clear picture of the network architecture. Many problems come from the network, understanding them is key to solve issues
 - Be able to deploy as many parallel Nextcloud instances as needed
 - Share as many services as possible (but Nextcloud) to save on hardware resources, and simulate real-life use-cases
-- Every web service should be accessible over HTTPS
+- Every web service should be accessible on a domain name over HTTPS (without any port specified)
 - Each Nextcloud instance should be "state of the art" configured, with cron and notify_push working (thanks @juliusknorr)
 - Be able to deploy as many services as needed (no port mapping/publishing)
 - Access to configuration files as easy as possible (work in progress)
@@ -96,9 +96,7 @@ Follow the network documentation [there](./doc/Network%20setup.md)
 
 ### Configure a reverse proxy for SSL termination
 
-SSL is beautiful to secure client-server communications, but a pain to handle for the noob.
-
-For that, we will use nginx, and customize a bit the default docker image. See everything [here](./apps/reverseproxy/README.md)).
+SSL is beautiful to secure client-server communications, but is sometimes a pain to handle for the beginner. For that, we will use nginx, and customize a bit the default docker image. See everything [here](./apps/reverseproxy/README.md)).
 
 ### Launch your first nextcloud instance
 
