@@ -23,6 +23,8 @@ There are four main networks in our setup:
 ```
 docker network create apps -d bridge --subnet 172.19.0.0/16 --ip-range 172.19.1.0/24
 ```
+**If you already have existing docker networks, there might be conflict if the subnet is already attributed**
+If you change the `subnet` parameter, pay attention to report that modification in the `/etc/host` file during the next steps.
 
 ## create the `push` network
 
