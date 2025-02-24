@@ -1,2 +1,2 @@
-cd apps/notify_push
+cd apps/nextcloud/notify_push
 docker build -f "Dockerfile" -t notify_push .

@@ -26,7 +26,7 @@ In our case, the default ones are located in the yaml files (`redis.yml, mariadb
 This has to be done once for all:
 
 ```sh
-bash apps/notify_push/build.sh
+bash apps/nextcloud/notify_push/build.sh
 ```
 
 ## Launch the first instance
