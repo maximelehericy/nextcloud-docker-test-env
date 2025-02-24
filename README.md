@@ -116,10 +116,7 @@ To follow the tutorial to spin up a first test Nextcloud instance, go [there](./
 
 ## Additional satellites
 
-### Configure a web-based database client (adminer)
-
-Read [here](./apps/adminer/README.md)
-
-### Configure Nextcloud Office (Collabora Online)
-
-Read [here](./apps/collabora/README.md)
+- Adminer (web-based DB client): read [here](./apps/adminer/README.md)
+- Nextcloud Office (Collabora Online): read [here](./apps/collabora/README.md)
+- Keycloak (IDP): read [here](./apps/keycloak/README.md)
+- Only Office (online editing): read [here](./apps/onlyoffice/README.md)
