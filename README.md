@@ -106,7 +106,7 @@ To your `/etc/hosts` file, add the following line:
 
 SSL is beautiful to secure client-server communications, but is sometimes a pain to handle for the beginner. For that, we will use nginx, and customize a bit the default docker image. See everything [here](./apps/reverseproxy/README.md).
 
-### Launch your first nextcloud instance
+## Launch your first nextcloud instance
 
 For this, we will use docker compose. Docker compose is a tool that allows to launch at once several containers, unlike the docker run command we used above.
 
@@ -114,4 +114,9 @@ Each sercice necessary for Nextcloud to work is decribed in a yaml file, where n
 
 To follow the tutorial to spin up a first test Nextcloud instance, go [there](./apps/nextcloud/standard/README.md)
 
+## Additional satellites
+
+### Configure a web-based database client (adminer)
+
+Read [here](./apps/adminer/README.md)
 
