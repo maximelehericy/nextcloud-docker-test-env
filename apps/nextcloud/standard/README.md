@@ -89,6 +89,10 @@ do
 done
 ```
 
+# Access your Nextcloud instance
+
+You can access your Nextcloud instance using the `admin:admin` credentials, as defined [here](nextcloud.yml#L48)
+
 # Launching several Nextcloud instance in parallel
 
 Simply run the `docker compose -p projectName [...] up -d` command as many times as you want, each time with changing the `projectName`.
