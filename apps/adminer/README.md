@@ -77,7 +77,7 @@ docker restart reverseproxy
 
 Navigate to https://adminer.yourdomain.com, you should be able to access adminer. The fields should be completed as follow:
 
-- Server: should be following this pattern `projectName-db-1`
+- Server: pattern `projectName-db-1`
 - Username: `nextcloud`
 - Password: `nextcloud`
 - Database: `nextcloud`
