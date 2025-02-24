@@ -34,14 +34,14 @@ Everything that follow has been done on Linux. I don't know how easily it can be
 
 A few key principles guided the design of this project:
 
-- Should run 100% locally, internet access is not mandatory
-- Have little automation, so it is easier to understand what are the interactions between the components
-- Provide a clear picture of the network architecture. Many problems come from the network, understanding them is key to solve issues
-- Be able to deploy as many parallel Nextcloud instances as needed
-- Share as many services as possible (but Nextcloud) to save on hardware resources, and simulate real-life use-cases
-- Every web service should be accessible on a domain name over HTTPS (without any port specified)
-- Each Nextcloud instance should be "state of the art" configured, with cron and notify_push working (thanks @juliusknorr)
-- Be able to deploy as many services as needed (no port mapping/publishing)
+- Should **run 100% locally**, internet access is not mandatory
+- Have **little automation**, so it is easier to understand what are the interactions between the components
+- Provide a clear picture of the **network architecture**. Many problems come from the network, understanding them is key to solve issues
+- Be able to deploy **as many parallel Nextcloud instances as needed**
+- **Share as many services as possible** (but Nextcloud) to save on hardware resources, and simulate real-life use-cases
+- Every web service should be accessible on a **domain name over HTTPS** (without any port specified)
+- Each Nextcloud instance should be "state of the art" configured, with **cron and notify_push** working (thanks @juliusknorr)
+- Be able to **deploy as many services as needed** (no port mapping/publishing)
 - Access to configuration files as easy as possible (work in progress)
 - Ability to trash and rebuild in a minute (work in progress)
 
