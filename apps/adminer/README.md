@@ -11,7 +11,7 @@ docker run --network apps --network databases --name adminer --restart unless-st
 
 The container `adminer` must be attached to:
 - the `apps` network so it can talk to `reverseproxy`,
-- the `database` network, so it can talk to all nextcloud database containers (see [nextcloud.yml](../nextcloud/standard/mariadb.yml#10))
+- the `database` network, so it can talk to all nextcloud database containers (see [mariadb.yml](../nextcloud/standard/mariadb.yml#10))
 
 ## Add adminer entry to `/etc/hosts`
 
