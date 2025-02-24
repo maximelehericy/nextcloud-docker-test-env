@@ -120,3 +120,6 @@ To follow the tutorial to spin up a first test Nextcloud instance, go [there](./
 
 Read [here](./apps/adminer/README.md)
 
+### Configure Nextcloud Office (Collabora Online)
+
+Read [here](./apps/collabora/README.md)
