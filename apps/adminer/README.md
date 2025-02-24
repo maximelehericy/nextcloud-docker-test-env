@@ -72,3 +72,15 @@ Restart your `reverseproxy` container:
 ```sh
 docker restart reverseproxy
 ```
+
+## Test
+
+Navigate to https://adminer.yourdomain.com, you should be able to access adminer. The fields should be completed as follow:
+
+- Server: should be following this pattern `projectName-db-1`
+- Username: `nextcloud`
+- Password: `nextcloud`
+- Database: `nextcloud`
+
+NB: `username, password and database` are defined in [mariadb.yml](../nextcloud/standard/mariadb.yml#L20) file.
+
