@@ -17,7 +17,7 @@ This project also provides the following **integrations**:
 - ⌛ Nextcloud talk recording backend
 - ⌛ Nextcloud whiteboard
 - ⌛ Nextcloud AppAPI docker socket proxy (for AI services)
-- ⌛ Only Office (for online editiong of office files)
+- ✅ Only Office (for online editiong of office files)
 - ⌛ Open Project (for project management)
 
 This project also provides a few **other key components** that are nearly always included in real-life Nextcloud deployments or useful for testing purposes:
