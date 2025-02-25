@@ -15,14 +15,14 @@ This project also provides the following **integrations**:
 - ✅ Nextcloud Office (based on Collabora Online, for online editiong of office files)
 - ⌛ Nextcloud talk high-performance backend (for performant videoconference)
 - ⌛ Nextcloud talk recording backend
-- ⌛ Nextcloud whiteboard
+- ✅ Nextcloud whiteboard
 - ⌛ Nextcloud AppAPI docker socket proxy (for AI services)
 - ✅ Only Office (for online editiong of office files)
-- ⌛ Open Project (for project management)
+- ✅ Open Project (for project management)
 
 This project also provides a few **other key components** that are nearly always included in real-life Nextcloud deployments or useful for testing purposes:
 - ✅ Adminer, a web based database client
-- ⌛ Keycloak as SAML or OIDC identity provider for SSO
+- ✅ Keycloak as SAML or OIDC identity provider for SSO
 - ⌛ Stalwart-mail as mail server
 - ⚙️ LDAP for user and group management
 
@@ -121,3 +121,4 @@ To follow the tutorial to spin up a first test Nextcloud instance, go [there](./
 - Keycloak (IDP): read [here](./apps/keycloak/README.md)
 - Only Office (online editing): read [here](./apps/onlyoffice/README.md)
 - OpenProject (project management): read [here](./apps/openproject/README.md)
+- Nextcloud Whiteboard (based on Excalidraw): read [here](./apps/whiteboard/README.md)
