@@ -120,3 +120,4 @@ To follow the tutorial to spin up a first test Nextcloud instance, go [there](./
 - Nextcloud Office (Collabora Online): read [here](./apps/collabora/README.md)
 - Keycloak (IDP): read [here](./apps/keycloak/README.md)
 - Only Office (online editing): read [here](./apps/onlyoffice/README.md)
+- OpenProject (project management): read [here](./apps/openproject/README.md)
