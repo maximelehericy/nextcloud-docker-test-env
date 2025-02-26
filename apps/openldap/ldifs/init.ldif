@@ -1,0 +1,168 @@
+############# FILE STRUCTURE ##########
+
+## For OpenLDAP to initiate properly, this file must be structured as follow:
+## 1. root structure
+## 2. first level hierarchy (people and groups)
+## 3. second level hierarchy
+## 3.1. create people
+## 3.2. create groups and map people to groups
+## do not change the order !!!
+
+
+############### ROOT #################
+## DEFINE DIT ROOT/BASE/SUFFIX ####
+## uses RFC 2377 format
+## replace example and com as necessary below
+## or for experimentation leave as is
+
+## dcObject is an AUXILLIARY objectclass and MUST
+## have a STRUCTURAL objectclass (organization in this case)
+## this is an ENTRY sequence and is preceded by a BLANK line
+
+dn: dc=local,dc=org
+dc: local
+objectClass: dcObject
+objectClass: organization
+o: Example, Inc.
+
+############### FIRST LEVEL HIERARCHY ##################
+
+## people
+## groups
+
+## FIRST Level hierarchy - people
+## uses mixed upper and lower case for objectclass
+
+dn: ou=people,dc=local,dc=org
+ou: people
+description: All people in organisation
+objectclass: organizationalunit
+
+# create FIRST Level groups branch
+
+dn: ou=groups,dc=local,dc=org
+objectclass:organizationalunit
+ou: groups
+description: generic groups branch
+
+
+################# SECOND LEVEL HIERARCHY ###############
+
+############### PEOPLE #################
+
+dn: uid=alice,ou=people,dc=local,dc=org
+objectClass: posixAccount
+objectClass: shadowAccount
+objectClass: inetOrgPerson
+cn: Alice
+sn: Russel
+uid: alice
+mail: alice@mail.local.mlh.ovh
+userPassword: alice
+uidNumber: 20001
+gidNumber: 20001
+homeDirectory: /home/alice
+
+
+dn: uid=bob,ou=people,dc=local,dc=org
+objectClass: posixAccount
+objectClass: shadowAccount
+objectClass: inetOrgPerson
+cn: Bobby
+sn: Ficher
+uid: bob
+mail: bob@mail.local.mlh.ovh
+userPassword: bob
+uidNumber: 20002
+gidNumber: 20002
+homeDirectory: /home/bob
+
+
+dn: uid=charlie,ou=people,dc=local,dc=org
+objectClass: posixAccount
+objectClass: shadowAccount
+objectClass: inetOrgPerson
+cn: Charlie
+sn: Dalin
+uid: charlie
+mail: charlie@mail.local.mlh.ovh
+userPassword: charlie
+uidNumber: 20003
+gidNumber: 20003
+homeDirectory: /home/charlie
+
+
+dn: uid=david,ou=people,dc=local,dc=org
+objectClass: posixAccount
+objectClass: shadowAccount
+objectClass: inetOrgPerson
+cn: David
+sn: Crocket
+uid: david
+mail: david@mail.local.mlh.ovh
+userPassword: david
+uidNumber: 20004
+gidNumber: 20004
+homeDirectory: /home/david
+
+
+dn: uid=eve,ou=people,dc=local,dc=org
+objectClass: posixAccount
+objectClass: shadowAccount
+objectClass: inetOrgPerson
+cn: Eve
+sn: Longoria
+uid: eve
+mail: eve@mail.local.mlh.ovh
+userPassword: eve
+uidNumber: 20005
+gidNumber: 20005
+homeDirectory: /home/evelyne
+
+
+dn: uid=francis,ou=people,dc=local,dc=org
+objectClass: posixAccount
+objectClass: shadowAccount
+objectClass: inetOrgPerson
+cn: Francis
+sn: Coppola
+uid: francis
+mail: francis@mail.local.mlh.ovh
+userPassword: francis
+uidNumber: 20006
+gidNumber: 20006
+homeDirectory: /home/francis
+
+
+dn: uid=georges,ou=people,dc=local,dc=org
+objectClass: posixAccount
+objectClass: shadowAccount
+objectClass: inetOrgPerson
+cn: Georges
+sn: Washington
+uid: georges
+mail: francis@mail.local.mlh.ovh
+userPassword: georges
+uidNumber: 20006
+gidNumber: 20006
+homeDirectory: /home/georges
+
+
+
+############### GROUPS ###################
+
+## create the nextcloud entry under groups
+## create groups and user-group mapping
+## need to be placed after people creation
+
+
+dn: cn=nextcloud,ou=groups,dc=local,dc=org
+objectclass: groupOfNames
+cn: nextcloud
+description: nextcloud users
+member: uid=alice,ou=people,dc=local,dc=org
+member: uid=bob,ou=people,dc=local,dc=org
+member: uid=charlie,ou=people,dc=local,dc=org
+member: uid=david,ou=people,dc=local,dc=org
+member: uid=eve,ou=people,dc=local,dc=org
+member: uid=francis,ou=people,dc=local,dc=org

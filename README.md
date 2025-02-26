@@ -24,7 +24,7 @@ This project also provides a few **other key components** that are nearly always
 - ✅ Adminer, a web based database client
 - ✅ Keycloak as SAML or OIDC identity provider for SSO
 - ⌛ Stalwart-mail as mail server
-- ⚙️ LDAP for user and group management
+- ✅ LDAP for user and group management
 
 # Requirements
 
@@ -122,3 +122,4 @@ To follow the tutorial to spin up a first test Nextcloud instance, go [there](./
 - Only Office (online editing): read [here](./apps/onlyoffice/README.md)
 - OpenProject (project management): read [here](./apps/openproject/README.md)
 - Nextcloud Whiteboard (based on Excalidraw): read [here](./apps/whiteboard/README.md)
+- LDAP server (based on OpenLDAP): read [here](./apps/openldap/README.md)
