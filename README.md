@@ -13,7 +13,7 @@ This project implemented **Nextcloud** in the following ways:
 
 This project also provides the following **integrations**:
 - ✅ Nextcloud Office (based on Collabora Online, for online editiong of office files)
-- ⌛ Nextcloud talk high-performance backend (for performant videoconference)
+- ✅ Nextcloud talk high-performance backend (for performant videoconference)
 - ⌛ Nextcloud talk recording backend
 - ✅ Nextcloud whiteboard
 - ✅ Nextcloud AppAPI docker socket proxy (for AI services)
@@ -123,5 +123,6 @@ To follow the tutorial to spin up a first test Nextcloud instance, go [there](./
 - OpenProject (project management): read [here](./apps/openproject/README.md)
 - Nextcloud Whiteboard (based on Excalidraw): read [here](./apps/whiteboard/README.md)
 - LDAP server (based on OpenLDAP): read [here](./apps/openldap/README.md)
-- AppAPI Docker Socket Proxy : read [here](./apps/appapi/README.md)
-- Stalwart-mail server : read [here](./apps/stalwart/README.md)
+- AppAPI Docker Socket Proxy: read [here](./apps/appapi/README.md)
+- Stalwart-mail server: read [here](./apps/stalwart/README.md)
+- Nextcloud Talk High-Performance Backend: read [here](./apps/talk/README.md)
