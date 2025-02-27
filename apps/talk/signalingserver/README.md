@@ -114,7 +114,7 @@ curl -i https://signaling-server.local.mlh.ovh/standalone-signaling/api/v1/welco
 ## Connect your Nextcloud instance to the signaling server
 
 Go to your Nextcloud instance `Avatar > Administration settings > Talk`.
-Set the parameters as follow:
+In the `High-performance backend` section, set the parameters as follow:
 - high-performance backend URL: `https://signalingserver.YOURDOMAIN/standalone-signaling/`
 - tick the `Validate SSL certificate` checkbox
 - in the `Shared secret` set `the-shared-secret-for-allowall` (or the value you set in the signaling server configuration file in the `backend.secret`)

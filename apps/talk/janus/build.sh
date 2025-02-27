@@ -1,2 +1,2 @@
-cd ~/Nextcloud/Docs/Docker/apps/talk/janus
+cd ${PWD}/apps/talk/janus
 docker build -f "Dockerfile" -t janus .
