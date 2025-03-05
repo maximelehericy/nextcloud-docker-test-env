@@ -1,0 +1,8 @@
+Accounting
+ProductDevelopment
+ProductTesting
+HumanResources
+Payroll
+Management
+Administrative
+Planning

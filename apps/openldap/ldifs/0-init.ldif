@@ -54,7 +54,8 @@ dn: uid=alice,ou=people,dc=local,dc=org
 objectClass: posixAccount
 objectClass: shadowAccount
 objectClass: inetOrgPerson
-cn: Alice
+description: Alice Russel
+cn: Alice Russel
 sn: Russel
 uid: alice
 mail: alice@mail.local.mlh.ovh
@@ -68,7 +69,8 @@ dn: uid=bob,ou=people,dc=local,dc=org
 objectClass: posixAccount
 objectClass: shadowAccount
 objectClass: inetOrgPerson
-cn: Bobby
+description: Bobby Fisher
+cn: Bobby Fischer
 sn: Ficher
 uid: bob
 mail: bob@mail.local.mlh.ovh
@@ -82,7 +84,8 @@ dn: uid=charlie,ou=people,dc=local,dc=org
 objectClass: posixAccount
 objectClass: shadowAccount
 objectClass: inetOrgPerson
-cn: Charlie
+description: Charlie Dalin
+cn: Charlie Dalin
 sn: Dalin
 uid: charlie
 mail: charlie@mail.local.mlh.ovh
@@ -96,7 +99,8 @@ dn: uid=david,ou=people,dc=local,dc=org
 objectClass: posixAccount
 objectClass: shadowAccount
 objectClass: inetOrgPerson
-cn: David
+description: David Crocket
+cn: David Crocket
 sn: Crocket
 uid: david
 mail: david@mail.local.mlh.ovh
@@ -110,6 +114,7 @@ dn: uid=eve,ou=people,dc=local,dc=org
 objectClass: posixAccount
 objectClass: shadowAccount
 objectClass: inetOrgPerson
+description: Eve Longoria
 cn: Eve
 sn: Longoria
 uid: eve
@@ -124,6 +129,7 @@ dn: uid=francis,ou=people,dc=local,dc=org
 objectClass: posixAccount
 objectClass: shadowAccount
 objectClass: inetOrgPerson
+description: Francis Coppola
 cn: Francis
 sn: Coppola
 uid: francis
@@ -138,13 +144,14 @@ dn: uid=georges,ou=people,dc=local,dc=org
 objectClass: posixAccount
 objectClass: shadowAccount
 objectClass: inetOrgPerson
+description: Georges Washington
 cn: Georges
 sn: Washington
 uid: georges
-mail: francis@mail.local.mlh.ovh
+mail: georges@mail.local.mlh.ovh
 userPassword: georges
-uidNumber: 20006
-gidNumber: 20006
+uidNumber: 20007
+gidNumber: 20007
 homeDirectory: /home/georges
 
 

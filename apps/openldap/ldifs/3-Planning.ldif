@@ -1,0 +1,16 @@
+dn: cn=Planning,ou=groups,dc=local,dc=org
+cn: Planning
+description: Planning
+objectclass: groupOfNames
+member: uid=kaylyn.ratnayake,ou=people,dc=local,dc=org
+member: uid=beaumont.beshir,ou=people,dc=local,dc=org
+member: uid=ermo.lenathen,ou=people,dc=local,dc=org
+member: uid=germana.amalu,ou=people,dc=local,dc=org
+member: uid=brent.awadia,ou=people,dc=local,dc=org
+member: uid=mer.mcghee,ou=people,dc=local,dc=org
+member: uid=bo.arsena,ou=people,dc=local,dc=org
+member: uid=stacia.plastina,ou=people,dc=local,dc=org
+member: uid=miyuki.tripier,ou=people,dc=local,dc=org
+member: uid=tec.bubak,ou=people,dc=local,dc=org
+member: uid=carolynn.schiller,ou=people,dc=local,dc=org
+member: uid=paulo.tilmon,ou=people,dc=local,dc=org

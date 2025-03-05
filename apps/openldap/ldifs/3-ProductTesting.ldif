@@ -1,0 +1,14 @@
+dn: cn=ProductTesting,ou=groups,dc=local,dc=org
+cn: ProductTesting
+description: ProductTesting
+objectclass: groupOfNames
+member: uid=cooper.nash,ou=people,dc=local,dc=org
+member: uid=eliza.bruhl,ou=people,dc=local,dc=org
+member: uid=annalise.briante,ou=people,dc=local,dc=org
+member: uid=dulciana.monzo,ou=people,dc=local,dc=org
+member: uid=eluned.hilliard,ou=people,dc=local,dc=org
+member: uid=sukey.prodmgmt,ou=people,dc=local,dc=org
+member: uid=delfin.garvey,ou=people,dc=local,dc=org
+member: uid=dot.cropper,ou=people,dc=local,dc=org
+member: uid=romola.dovydaitis,ou=people,dc=local,dc=org
+member: uid=britte.romanchuck,ou=people,dc=local,dc=org

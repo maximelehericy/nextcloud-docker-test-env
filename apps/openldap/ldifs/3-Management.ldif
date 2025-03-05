@@ -1,0 +1,16 @@
+dn: cn=Management,ou=groups,dc=local,dc=org
+cn: Management
+description: Management
+objectclass: groupOfNames
+member: uid=fayina.srivastava,ou=people,dc=local,dc=org
+member: uid=kylynn.ritz,ou=people,dc=local,dc=org
+member: uid=dominica.vanphil,ou=people,dc=local,dc=org
+member: uid=hollyanne.ketterer,ou=people,dc=local,dc=org
+member: uid=carleen.dube,ou=people,dc=local,dc=org
+member: uid=aeriela.nickerson,ou=people,dc=local,dc=org
+member: uid=nerita.mymryk,ou=people,dc=local,dc=org
+member: uid=rea.abdulla,ou=people,dc=local,dc=org
+member: uid=rorie.hvezda,ou=people,dc=local,dc=org
+member: uid=constanta.cicchino,ou=people,dc=local,dc=org
+member: uid=katja.georgiou,ou=people,dc=local,dc=org
+member: uid=micheal.cimino,ou=people,dc=local,dc=org

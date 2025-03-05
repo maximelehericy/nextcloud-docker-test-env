@@ -85,7 +85,7 @@ docker exec ldap ldapsearch -H "ldapi:///" -x -b "ou=people,dc=local,dc=org" "(u
 # search all members of the ldap group nextcloud
 docker exec ldap ldapsearch -H "ldapi:///" -x -b "ou=people,dc=local,dc=org" "(memberof=cn=nextcloud,ou=groups,dc=local,dc=org)"
 
-# add a file to ldap to add, modify or delete LDAP records
-docker exec ldap ldapadd -x -D "cn=ldapadmin,dc=local,dc=org" -w ldapadmin -H "ldapi:///" -f /postldifs/init.ldif
+# add a file to ldap to add LDAP records
+docker exec ldap ldapadd -x -D "cn=ldapadmin,dc=local,dc=org" -w ldapadmin -H "ldapi:///" -f /ldifs/massive.ldif
 ```
 

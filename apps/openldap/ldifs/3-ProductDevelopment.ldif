@@ -1,0 +1,17 @@
+dn: cn=ProductDevelopment,ou=groups,dc=local,dc=org
+cn: ProductDevelopment
+description: ProductDevelopment
+objectclass: groupOfNames
+member: uid=miep.meletios,ou=people,dc=local,dc=org
+member: uid=lesia.lortie,ou=people,dc=local,dc=org
+member: uid=jacynth.keller,ou=people,dc=local,dc=org
+member: uid=pars.lheureux,ou=people,dc=local,dc=org
+member: uid=minoru.bivens,ou=people,dc=local,dc=org
+member: uid=homer.gast,ou=people,dc=local,dc=org
+member: uid=jolyn.chun,ou=people,dc=local,dc=org
+member: uid=su.mayoux,ou=people,dc=local,dc=org
+member: uid=constantina.kovarik,ou=people,dc=local,dc=org
+member: uid=leona.ambroise,ou=people,dc=local,dc=org
+member: uid=corabel.senyshyn,ou=people,dc=local,dc=org
+member: uid=derin.baragar,ou=people,dc=local,dc=org
+member: uid=margit.cirulli,ou=people,dc=local,dc=org

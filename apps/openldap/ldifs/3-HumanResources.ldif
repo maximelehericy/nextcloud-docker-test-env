@@ -1,0 +1,16 @@
+dn: cn=HumanResources,ou=groups,dc=local,dc=org
+cn: HumanResources
+description: HumanResources
+objectclass: groupOfNames
+member: uid=donella.mcgruder,ou=people,dc=local,dc=org
+member: uid=faizal.tadevich,ou=people,dc=local,dc=org
+member: uid=poulos.citarelli,ou=people,dc=local,dc=org
+member: uid=gerta.dwyer,ou=people,dc=local,dc=org
+member: uid=fikre.mcbroom,ou=people,dc=local,dc=org
+member: uid=corie.lantz,ou=people,dc=local,dc=org
+member: uid=fancie.gorfine,ou=people,dc=local,dc=org
+member: uid=estel.plouffe,ou=people,dc=local,dc=org
+member: uid=debera.duyck,ou=people,dc=local,dc=org
+member: uid=norman.korest,ou=people,dc=local,dc=org
+member: uid=danyelle.chanchlani,ou=people,dc=local,dc=org
+member: uid=suzan.buhr,ou=people,dc=local,dc=org
