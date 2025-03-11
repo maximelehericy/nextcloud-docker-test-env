@@ -41,6 +41,7 @@ services:
     image: nextcloud:30.0.2
     restart: unless-stopped
     networks:
+      - apps
       - local
     volumes:
       - nextcloud:/var/www/html:z

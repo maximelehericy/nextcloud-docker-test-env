@@ -96,3 +96,10 @@ You can access your Nextcloud instance using the `admin:admin` credentials, as d
 # Launching several Nextcloud instance in parallel
 
 Simply run the `docker compose -p projectName [...] up -d` command as many times as you want, each time with changing the `projectName`.
+
+# Modify the default frequency of cronjobs
+
+In case you need to modify the cronjob interval, with the following command you would change the frequency to every minute, instead of 5 minutes:
+```sh
+docker exec -it nc1-cron-1 bash -c "echo '*/1 * * * * php -f /var/www/html/cron.php' > /var/spool/cron/crontabs/www-data"
+```
