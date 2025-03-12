@@ -101,5 +101,5 @@ Simply run the `docker compose -p projectName [...] up -d` command as many times
 
 In case you need to modify the cronjob interval, with the following command you would change the frequency to every minute, instead of 5 minutes:
 ```sh
-docker exec -it nc1-cron-1 bash -c "echo '*/1 * * * * php -f /var/www/html/cron.php' > /var/spool/cron/crontabs/www-data"
+docker exec -it nc1-cron-1 bash -c "echo '*/5 * * * * php -f /var/www/html/cron.php' > /var/spool/cron/crontabs/www-data"
 ```
