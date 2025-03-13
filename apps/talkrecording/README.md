@@ -91,7 +91,7 @@ server {
     set $recording http://talkrecording:8000;
 
     location / {
-        proxy_pass http://talkrecording:8000/;
+        proxy_pass $recording/;
         proxy_http_version 1.1;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
@@ -99,7 +99,7 @@ server {
     }
 
     location /spreed {
-        proxy_pass http://talkrecording:8000/spreed;
+        proxy_pass $recording/spreed;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "Upgrade";
