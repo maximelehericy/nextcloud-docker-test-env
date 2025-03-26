@@ -19,6 +19,7 @@ This project also provides the following **integrations**:
 - ✅ Nextcloud AppAPI docker socket proxy (for AI services)
 - ✅ Only Office (for online editiong of office files)
 - ✅ Open Project (for project management)
+- ✅ Documenso (for electronic signature)
 
 This project also provides a few **other key components** that are nearly always included in real-life Nextcloud deployments or useful for testing purposes:
 - ✅ Adminer, a web based database client
@@ -127,3 +128,4 @@ To follow the tutorial to spin up a first test Nextcloud instance, go [there](./
 - Stalwart-mail server: read [here](./apps/stalwart/README.md)
 - Nextcloud Talk High-Performance Backend: read [here](./apps/talk/README.md)
 - Nextcloud Talk Recording server: read [here](./apps/talkrecording/README.md)
+- Documenso: read [here](./apps/documenso/README.md)
