@@ -14,7 +14,7 @@ networks:
 
 services:
   nextcloud:
-    image: nextcloud:31.0.0
+    image: nextcloud:31.0.2
     restart: unless-stopped
     networks:
       - apps
