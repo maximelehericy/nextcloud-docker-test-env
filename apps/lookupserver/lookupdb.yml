@@ -1,0 +1,35 @@
+# yaml file for nextcloud DB
+
+volumes:
+  db:
+    driver: local
+
+networks:
+  databases:
+    external: true
+    name: databases
+  local:
+    driver: bridge
+
+services:
+  db:
+    image: lookupdb
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW              
+    environment:
+      - MYSQL_ROOT_PASSWORD=example
+      - MYSQL_PASSWORD=lookup
+      - MYSQL_DATABASE=lookup
+      - MYSQL_USER=lookup
+    restart: unless-stopped
+    volumes:
+      - db:/var/lib/mysql/
+    networks:
+      - databases
+      - local
+
+  lookup:
+    environment:
+      - MYSQL_PASSWORD=lookup
+      - MYSQL_DATABASE=lookup
+      - MYSQL_USER=lookup
+      - MYSQL_HOST=db

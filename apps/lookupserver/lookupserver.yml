@@ -1,0 +1,38 @@
+#version: "4.1.5"
+
+volumes:
+  lookup:
+    driver: local
+
+networks:
+  apps:
+    external: true
+  local:
+    driver: bridge
+
+services:
+  lookup:
+    image: lookup
+    restart: unless-stopped
+    networks:
+      - apps
+      - local
+    volumes:
+      - lookup:/var/www/html:z
+    environment:
+      - TATA=tata
+    depends_on:
+      - db
+
+  cron:
+    image: lookup
+    restart: unless-stopped
+    networks:
+      - local
+    volumes:
+      - lookup:/var/www/html:z
+    environment:
+      - TATA=tata
+    depends_on:
+      - db
+    entrypoint: /cron.sh

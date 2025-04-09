@@ -1,0 +1,17 @@
+{
+    "message": {
+      "data": {
+        "federationId": "alice@ncgss2.local.mlh.ovh",
+        "name" : "Foo Bar",
+        "email" : "foo@bar.com",
+        "address" : "Foo Road 1",
+        "website" : "example.com",
+        "twitter" : "@foo",
+        "phone" : "+1234567890"
+      },
+      "type" : "lookupserver",
+      "timestamp" : 1337,
+      "signer" : "foo@cloud.bar.com"
+    },
+    "signature" : "0ABCDDEE...."
+}

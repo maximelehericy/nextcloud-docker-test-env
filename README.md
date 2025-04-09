@@ -9,13 +9,14 @@ Provide a test environment where it is easy to test Nextcloud features, integrat
 This project implemented **Nextcloud** in the following ways:
 - ✅ Standalone Nextcloud
 - ✅ Federated Nextcloud instances (with several standalone instances)
-- ⌛ Nextcloud Global Scale
+- ✅ Nextcloud Global Scale
 
 This project also provides the following **integrations**:
 - ✅ Nextcloud Office (based on Collabora Online, for online editiong of office files)
 - ✅ Nextcloud talk high-performance backend (for performant videoconference)
 - ✅ Nextcloud talk recording backend
 - ✅ Nextcloud whiteboard
+- ✅ Nextcloud Lookup server (shared user directory)
 - ✅ Nextcloud AppAPI docker socket proxy (for AI services)
 - ✅ Only Office (for online editiong of office files)
 - ✅ Open Project (for project management)
@@ -129,3 +130,5 @@ To follow the tutorial to spin up a first test Nextcloud instance, go [there](./
 - Nextcloud Talk High-Performance Backend: read [here](./apps/talk/README.md)
 - Nextcloud Talk Recording server: read [here](./apps/talkrecording/README.md)
 - Documenso: read [here](./apps/documenso/README.md)
+- Nextcloud Lookup server: read [here](./apps/lookupserver/README.md)
+- Nextcloud Global Scale: read [here](./apps/nextcloud/globalscale/README.md)
