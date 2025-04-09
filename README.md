@@ -57,6 +57,13 @@ Read [here](./doc/familiarizewithdocker.md)
 
 # Setup
 
+In a nutshell, the steps are these:
+1. get trusted SSL wildcard certificates for your local test environment
+2. install docker
+3. prepare the docker network
+4. spawn an NGINX container that will act as a reverse proxy to access other containers
+5. deploy as many Nextcloud instances and other services as needed
+
 ## First things first
 
 Before starting to play with docker, you will need a few things:
@@ -104,7 +111,7 @@ To your `/etc/hosts` file, add the following line:
 172.19.0.1 test.<yourdomain> nc1.<yourdomain> nc2.<yourdomain>
 ```
 
-### Configure a reverse proxy for SSL termination
+### Configure an NGINX reverse proxy for SSL termination
 
 SSL is beautiful to secure client-server communications, but is sometimes a pain to handle for the beginner. For that, we will use nginx, and customize a bit the default docker image. See everything [here](./apps/reverseproxy/README.md).
 
