@@ -25,7 +25,7 @@ tar -xzf globalsiteslector.tar.gz -C globalsiteselector --strip-components=1
 # export the built app to global scale custom_apps directory
 tar -xzf globalsiteselector/build/artifacts/globalsiteselector-2.6.1.tar.gz -C apps/nextcloud/globalscale/custom_apps
 # remove unecessary leftovers
-rm globalsiteslector.tar.gz
+rm globalsiteselector.tar.gz
 rm -vrf globalsiteselector
 ```
 
