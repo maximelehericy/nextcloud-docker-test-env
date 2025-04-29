@@ -19,8 +19,6 @@ services:
       - local
     volumes:
       - lookup:/var/www/html:z
-    environment:
-      - TATA=tata
     depends_on:
       - db
 
@@ -31,8 +29,6 @@ services:
       - local
     volumes:
       - lookup:/var/www/html:z
-    environment:
-      - TATA=tata
     depends_on:
       - db
     entrypoint: /cron.sh
