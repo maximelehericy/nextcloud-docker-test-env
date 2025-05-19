@@ -127,7 +127,7 @@ docker exec -u 33 gsmaster-nextcloud-1 php occ config:system:set gss.user.discov
 docker exec -u 33 gsmaster-nextcloud-1 php occ config:system:set gss.discovery.saml.slave.mapping --value="gss_instance"
 ```
 
-## apply tweaks on nodes only
+## apply tweaks on secondary nodes only
 ```sh
 for i in node1 node2 teams;
 do
