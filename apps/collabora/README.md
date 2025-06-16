@@ -124,10 +124,22 @@ Add the following (or append an existing line):
 172.19.0.1 office.YOURDOMAIN
 ```
 
-## Run the container
+## Run the community container
 
 ```sh
+# with the community version (CODE)
 docker run -t -d --network apps --name collabora -v ${PWD}/apps/collabora/coolwsd.xml:/etc/coolwsd/coolwsd.xml --restart unless-stopped collabora/code
+```
+
+## Run the enterprise container
+
+Download or copy in `apps/collabora` the content of this Github directory: https://github.com/CollaboraOnline/online/tree/master/docker/from-packages
+
+```sh
+# with a licence key / enterprise version
+echo PLACE_YOUR_SECRET_HERE > secret_key
+bash apps/collabora/build.sh
+docker run -t -d --network apps --name collabora -v ${PWD}/apps/collabora/coolwsd.xml:/etc/coolwsd/coolwsd.xml --restart unless-stopped collabora
 ```
 
 - The container belongs to the `apps` network, so the reverse proxy can access it.
