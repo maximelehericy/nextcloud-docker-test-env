@@ -139,7 +139,7 @@ Download or copy in `apps/collabora` the content of this Github directory: https
 # with a licence key / enterprise version
 echo PLACE_YOUR_SECRET_HERE > secret_key
 bash apps/collabora/build.sh
-docker run -t -d --network apps --name collabora -v ${PWD}/apps/collabora/coolwsd.xml:/etc/coolwsd/coolwsd.xml --restart unless-stopped collabora
+docker run -t -d --network apps --name collabora -v ${PWD}/apps/collabora/coolwsd.xml:/etc/coolwsd/coolwsd.xml --restart unless-stopped collabora:25.04
 ```
 
 - The container belongs to the `apps` network, so the reverse proxy can access it.
