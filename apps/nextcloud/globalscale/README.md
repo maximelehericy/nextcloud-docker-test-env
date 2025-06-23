@@ -58,7 +58,7 @@ You should also add the ad hoc entries in your `/etc/hosts` file.
 # node1 and node2 will be two example nodes in the global scale setup
 # teams can be an additional node that host federated teams (still to be documented)
 
-for pname in master node1 node2 teams
+for pname in master node1 node2 #teams
 do
     docker compose -p $pname -f apps/nextcloud/globalscale/mariadb.yml -f apps/nextcloud/globalscale/nextcloud.yml -f apps/nextcloud/globalscale/redis.yml up -d
     sleep 5
