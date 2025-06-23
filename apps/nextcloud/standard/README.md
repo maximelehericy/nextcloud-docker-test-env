@@ -73,7 +73,7 @@ There are a few tweaks here and there so that a Nextcloud instance is nearly com
 Despite all the previous auto-configuration stuff and post-installation scripts, there is a last command that must be run in order to setup a few important things that depend on the "name" of the instance. For our `test` instance, we would run the following:
 
 ```sh
-for instancenanme in test
+for instancename in test
 do
     echo $instancename-nextcloud-1
 
