@@ -14,7 +14,7 @@ networks:
 
 services:
   nextcloud:
-    image: ncgs:31.0.6
+    image: ncgs:31.0.8
     restart: unless-stopped
     networks:
       - apps
@@ -36,7 +36,7 @@ services:
       - db
 
   cron:
-    image: ncgs:31.0.6
+    image: ncgs:31.0.8
     restart: unless-stopped
     networks:
       - apps

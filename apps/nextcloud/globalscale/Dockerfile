@@ -1,4 +1,4 @@
-FROM nextcloud:31.0.6
+FROM nextcloud:31.0.8
 COPY custom_apps/globalsiteselector /var/www/html/custom_apps/globalsiteselector
 RUN chown -R www-data:www-data /var/www/html
 RUN chown -R www-data:root /var/www

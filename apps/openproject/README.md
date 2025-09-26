@@ -11,7 +11,7 @@ docker run -d --name openproject \
   -v openproject_assets:/var/openproject/assets \
   --network apps \
   --restart unless-stopped \
-  openproject/openproject:15.0.2
+  openproject/openproject:16
 ```
 
 To stop the container:
