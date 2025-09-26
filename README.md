@@ -10,6 +10,7 @@ This project implemented **Nextcloud** in the following ways:
 - ✅ Standalone Nextcloud
 - ✅ Federated Nextcloud instances (with several standalone instances)
 - ✅ Nextcloud Global Scale
+- ✅ Nextcloud Dev (based on JuliusKnorr work)
 
 This project also provides the following **integrations**:
 - ✅ Nextcloud Office (based on Collabora Online, for online editiong of office files)
