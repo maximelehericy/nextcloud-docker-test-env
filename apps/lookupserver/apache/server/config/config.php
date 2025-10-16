@@ -73,8 +73,8 @@ $CONFIG = [
 	],
 
 	// enforce listing of instance instead of auto-generating it based on users' account
-	'INSTANCES' => [
-	 'node1.local.mlh.ovh',
-	 'node2.local.mlh.ovh',
-	]
+	// 'INSTANCES' => [
+	//  'node1.local.mlh.ovh',
+	//  'node2.local.mlh.ovh',
+	// ]
 ];
