@@ -97,6 +97,7 @@ done
 ```sh
     docker exec -u 33 master-nextcloud-1 php occ app:enable globalsiteselector
     docker exec -u 33 master-nextcloud-1 php occ config:system:set gs.enabled --value="true"
+    docker exec -u 33 master-nextcloud-1 php occ config:system:set gs.federation --value="global"
     docker exec -u 33 master-nextcloud-1 php occ config:system:set gss.mode --value="master"
     docker exec -u 33 master-nextcloud-1 php occ config:system:set gss.master.admin 0 --value="admin"
     docker exec -u 33 master-nextcloud-1 php occ config:system:set gss.master.csp-allow 0 --value="*.local.mlh.ovh"
@@ -133,7 +134,7 @@ for i in node1 node2 teams;
 do
     docker exec -u 33 $i-nextcloud-1 php occ app:enable globalsiteselector
     docker exec -u 33 $i-nextcloud-1 php occ config:system:set gs.enabled --value="true"
-    docker exec -u 33 $i-nextcloud-1 php occ config:system:set gs.federation --value="true"
+    docker exec -u 33 $i-nextcloud-1 php occ config:system:set gs.federation --value="global"
     docker exec -u 33 $i-nextcloud-1 php occ config:system:set gss.mode --value="slave"
     docker exec -u 33 $i-nextcloud-1 php occ config:system:set gss.master.url --value="https://master.local.mlh.ovh"
     docker exec -u 33 $i-nextcloud-1 php occ config:system:set lookup_server --value="https://lookup.local.mlh.ovh"
