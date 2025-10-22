@@ -27,6 +27,7 @@ This project also provides a few **other key components** that are nearly always
 - ✅ Adminer, a web based database client
 - ✅ Keycloak as SAML or OIDC identity provider for SSO
 - ✅ Stalwart-mail as mail server
+- ✅ Roundcube as standalone mail clients (to showcase guest accounts)
 - ✅ LDAP (prepopulated) for user and group management
 
 # Requirements
