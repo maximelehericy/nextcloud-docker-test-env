@@ -68,12 +68,12 @@ done
 ## to remove a previous gs setup
 
 ```sh
-for pname in master node1 node2 teams
+for pname in master node1 node2
 do
     docker compose -p $pname -f apps/nextcloud/globalscale/mariadb.yml -f apps/nextcloud/globalscale/nextcloud.yml -f apps/nextcloud/globalscale/redis.yml down
     # comment or uncomment the two lines below if you want to restart from scratch the setup and remove the volumes
-    docker volume rm $pname\_nextcloud
-    docker volume rm $pname\_db
+    # docker volume rm $pname\_nextcloud
+    # docker volume rm $pname\_db
 done
 ```
 
