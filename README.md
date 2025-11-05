@@ -18,7 +18,8 @@ This project also provides the following **integrations**:
 - ✅ Nextcloud talk recording backend
 - ✅ Nextcloud whiteboard
 - ✅ Nextcloud Lookup server (shared user directory)
-- ✅ Nextcloud AppAPI docker socket proxy (for AI services)
+- ✅ Nextcloud AppAPI docker socket proxy (for AI services and Flow until Nextcloud 31)
+- ✅ Nextcloud AppAPI HaRP (for AI services and Flow for Nextcloud 32 and upward)
 - ✅ Only Office (for online editiong of office files)
 - ✅ Open Project (for project management)
 - ✅ Documenso (for electronic signature)
