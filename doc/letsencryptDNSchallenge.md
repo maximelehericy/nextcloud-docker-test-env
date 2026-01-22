@@ -28,9 +28,17 @@ On RedHat based distros:
 dnf install pip
 ```
 
+### Create a virtual environment for pip to run certbot
+
+```sh
+python3 -m venv certbot
+source certbot/bin/activate
+```
+
 ### Install certbot
 
 ```sh
+pip install certbot
 pip install certbot-dns-ovh
 ```
 ## Get certificates
