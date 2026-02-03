@@ -20,7 +20,7 @@ There are four main networks in our setup:
 - The `--subnet 172.19.0.0/16` defines the boundaries of the network `apps` (from `172.19.0.1` to `172.19.255.254`)
 - As we need some fixed IPs ([see network diagram](./network%20architecture.webp)), we also limit the automatic IP assignment range to `172.19.1.0/24` (from `172.19.1.1` to `172.19.1.254`) which should be way enough for our testing purposes.
 
-```
+```sh
 docker network create apps -d bridge --subnet 172.19.0.0/16 --ip-range 172.19.1.0/24
 ```
 **If you already have existing docker networks, there might be conflict if the subnet is already attributed**
@@ -28,11 +28,11 @@ If you change the `subnet` parameter, pay attention to report that modification 
 
 ## create the `push` network
 
-```
+```sh
 docker network create push -d bridge
 ```
 
 ## create the `databases` network
-```
+```sh
 docker network create databases -d bridge
 ```
