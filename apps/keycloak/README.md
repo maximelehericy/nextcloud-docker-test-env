@@ -21,7 +21,7 @@ docker run -t -d --name keycloak \
     --restart unless-stopped \
     -v keycloak:/opt/keycloak \
     -v ${PWD}/apps/keycloak/my-theme/:/opt/keycloak/themes/my-theme \
-    keycloak/keycloak:26.0.7 start-dev
+    keycloak/keycloak:26.5 start-dev --security-policy=none
 ```
 
 To completely remove your keycloak instance and start from scratch again, you need to stop the container and delete the volume:
