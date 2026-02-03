@@ -7,7 +7,7 @@ docker run -d --name onlyoffice \
   --restart unless-stopped \
   -e JWT_ENABLED=true \
   -e JWT_SECRET=onlyoffice \
-  onlyoffice/documentserver:8.2.2
+  onlyoffice/documentserver
 ```
 
 ## Remove the container

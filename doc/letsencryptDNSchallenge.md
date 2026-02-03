@@ -19,6 +19,12 @@ Before going any further, you will need to purchase a domain name from \[OVH\](<
 On debian based distros:
 
 ```sh
+sudo su
+cd ~
+source certbot/bin/activate
+```
+
+```sh
 apt install pip
 ```
 

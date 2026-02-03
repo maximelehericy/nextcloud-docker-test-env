@@ -25,7 +25,7 @@ docker run -d -t \
     --restart unless-stopped \
     --volume stalwart:/opt/stalwart-mail \
     --volume /etc/letsencrypt/:/etc/letsencrypt/:ro \
-    --name stalwart-mail stalwartlabs/mail-server:latest
+    --name stalwart-mail stalwartlabs/stalwart:latest
 ```
 
 In case you need to stop it and remove it:
