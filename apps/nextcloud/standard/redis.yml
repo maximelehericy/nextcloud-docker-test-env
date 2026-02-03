@@ -6,7 +6,7 @@ networks:
 
 services:
   cache:
-    image: valkey/valkey:8.0.2-alpine
+    image: redis:8-alpine
     restart: unless-stopped
     # volumes:
     #  - redis-data:/var/lib/redis

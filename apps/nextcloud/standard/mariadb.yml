@@ -13,7 +13,7 @@ networks:
 
 services:
   db:
-    image: mariadb:10.11
+    image: mariadb:11.4
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW              
     environment:
       - MYSQL_ROOT_PASSWORD=example
