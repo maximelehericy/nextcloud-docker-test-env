@@ -7,21 +7,21 @@ Running keycloak is pretty simple:
 
 ```sh
 docker run -t -d --name keycloak \
-    -e KC_BOOTSTRAP_ADMIN_USERNAME=admin \
-    -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin \
+    -e KC_BOOTSTRAP_ADMIN_USERNAME=admin_tmp \
+    -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin_tmp \
     -e KC_PROXY_HEADERS=xforwarded \
     -e KC_HTTP_ENABLED=true \
     -e KC_PROXY=edge \
     -e KC_HOSTNAME_STRICT=false \
-    -e KEYCLOAK_ADMIN=test \
-    -e KEYCLOAK_ADMIN_PASSWORD=test \
+    -e KEYCLOAK_ADMIN=admin \
+    -e KEYCLOAK_ADMIN_PASSWORD=admin \
     -e KC_LOG_LEVEL=INFO \
     -e KC_SPI_THEME_DEFAULT:my-theme \
     --network apps \
     --restart unless-stopped \
     -v keycloak:/opt/keycloak \
     -v ${PWD}/apps/keycloak/my-theme/:/opt/keycloak/themes/my-theme \
-    keycloak/keycloak:26.5 start-dev --security-policy=none
+    keycloak/keycloak:26.5 start-dev
 ```
 
 To completely remove your keycloak instance and start from scratch again, you need to stop the container and delete the volume:
