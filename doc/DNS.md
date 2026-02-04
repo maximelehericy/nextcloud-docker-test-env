@@ -24,9 +24,9 @@ EOF
 
 # set DNS resolution rules for your local environment
 
-cat << EOF | sudo tee /etc/NetworkManager/dnsmasq.d/01-laplab.conf
+cat << EOF | sudo tee /etc/NetworkManager/dnsmasq.d/01-localDNS.conf
 
-# /etc/NetworkManager/dnsmasq.d/01-laplab.conf
+# /etc/NetworkManager/dnsmasq.d/01-localDNS.conf
 # This file sets up the local lablab domain and 
 # defines some aliases and a wildcard.
 local=/local.YOURDOMAIN.org/
@@ -52,6 +52,10 @@ cat << EOF | sudo tee /etc/NetworkManager/dnsmasq.d/02-add-hosts.conf
 #
 addn-hosts=/etc/hosts
 EOF
+
+# disable systemd-resolved (default DNS resolver) to avoid conflicts
+sudo systemctl disable systemd-resolved systemd-resolved-varlink.socket systemd-resolved-monitor.socket
+
 
 # restart the NetworkManager
 systemctl restart NetworkManager

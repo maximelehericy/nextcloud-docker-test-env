@@ -57,7 +57,11 @@ Then, perform the following:
 - Save, and `click the three dots > View DNS records > scroll down` and copy the content from the text field.
 - Go to your domain name provider and paste those DNS entries into your DNS settings.
 - You should be nearly all set.
-- Go to `Directory > Accounts`, and create a bunch of accounts to use as you wish !
+- Go to `Directory > Accounts`, and create a bunch of accounts to use as you wish ! (see next section to automate accounts creation)
+
+## Automate accounts creation
+
+See script [here](provisionning_users.sh).
 
 ## Test !
 
