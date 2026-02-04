@@ -1,5 +1,5 @@
 # in Stalwart admin settings, go to Directory > API keys
-bearer=<yourAPItoken>
+bearer=$(cat ./apps/stalwart/stalwartAPI.key)
 
 for accountname in alice bob charlie david eve francis georgina helene iori jeanne karola laura maxence nicole oriane pauline quentin romane sandra tomaso ulia victor william xavier yaya zeno
 do
