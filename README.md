@@ -114,6 +114,10 @@ To your `/etc/hosts` file, add the following line:
 172.19.0.1 test.<yourdomain> nc1.<yourdomain> nc2.<yourdomain>
 ```
 
+### Or configure dnsmasq plugin
+
+Follow documentation [here](./doc/DNS.md).
+
 ### Configure an NGINX reverse proxy for SSL termination
 
 SSL is beautiful to secure client-server communications, but is sometimes a pain to handle for the beginner. For that, we will use nginx, and customize a bit the default docker image. See everything [here](./apps/reverseproxy/README.md).
