@@ -53,10 +53,30 @@ Then, perform the following:
   - in Certificate, paste: `%{file:/etc/letsencrypt/live/YOURDOMAIN/fullchain.pem}%` (see letsencrypt volume binding in the `docker run` command above)
   - in Private key, paste: `%{file:/etc/letsencrypt/live/YOURDOMAIN/privkey.pem}%` (see letsencrypt volume binding in the `docker run` command above)
   - and save.
+
+## Domain and DNS
+
+Sending emails requires some configuration on the DNS side.
+
 - In `Directory > Domains` (click `Management` to return to setting home page :shrug:), click `Create domain`, and enter `mail.YOURDOMAIN` or just `YOURDOMAIN`.
 - Save, and `click the three dots > View DNS records > scroll down` and copy the content from the text field.
+
 - Go to your domain name provider and paste those DNS entries into your DNS settings.
-- You should be nearly all set.
+
+It does not always fully work, for example, email clients autoconfiguration might fail in Nextcloud Mail. For it to work, you may need to add an MX record in your local DNS service. For example, with the `dnsmasq` plugin of `NetworkManager` on linux (see [here](../../doc/DNS.md)) you would add the following line to your local DNS configuration file (e.g. `/etc/NetworkManager/dsnmasq.d/01-localDNS.conf`):
+
+```conf
+mx-host=YOUR_EMAIL_DOMAIN,YOUR_EMAIL_SERVER_URL,50
+```
+
+See also [dnsmasq documentation](https://github.com/PowerDNS/dnsmasq/blob/ebedcbaeb8c0e356077fba126f22a4049d52638b/dnsmasq.conf.example#L589) to know more about that config.
+
+To verify your config, use `nslookup -type=MX <YOUR_EMAIL_DOMAIN>`
+
+You should now be nearly all set.
+
+## Accounts
+
 - Go to `Directory > Accounts`, and create a bunch of accounts to use as you wish ! (see next section to automate accounts creation)
 
 ## Automate accounts creation
