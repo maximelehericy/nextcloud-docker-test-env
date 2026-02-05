@@ -28,7 +28,7 @@ This project also provides a few **other key components** that are nearly always
 - ✅ Adminer, a web based database client
 - ✅ Keycloak as SAML or OIDC identity provider for SSO
 - ✅ Stalwart-mail as mail server
-- ✅ Roundcube as standalone mail clients (to showcase guest accounts)
+- ✅ Roundcube as standalone mail clients (to showcase guest accounts for example)
 - ✅ LDAP (prepopulated) for user and group management
 
 # Requirements
@@ -141,6 +141,7 @@ To follow the tutorial to spin up a first test Nextcloud instance, go [there](./
 - LDAP server (based on OpenLDAP): read [here](./apps/openldap/README.md)
 - AppAPI Docker Socket Proxy: read [here](./apps/appapi/README.md)
 - Stalwart-mail server: read [here](./apps/stalwart/README.md)
+- Roundcube: read [here](./apps/roundcube/README.md)
 - Nextcloud Talk High-Performance Backend: read [here](./apps/talk/README.md)
 - Nextcloud Talk Recording server: read [here](./apps/talkrecording/README.md)
 - Documenso: read [here](./apps/documenso/README.md)
