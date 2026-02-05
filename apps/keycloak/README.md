@@ -90,3 +90,7 @@ _To be explained_
 ## Reference articles about running keycloak with docker
 - https://www.keycloak.org/getting-started/getting-started-docker
 - https://skycloak.io/blog/how-to-run-keycloak-behind-a-reverse-proxy/
+
+## Create users in bulk
+
+See script [here](provisonning_users.sh).
