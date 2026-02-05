@@ -85,7 +85,52 @@ There is an article on Nextcloud customer portal [here](https://portal.nextcloud
 
 ## Configure Keycloak as an OIDC provider for Nextcloud
 
-_To be explained_
+### Create a new client in Keycloak
+
+In the left menu go to `Clients > Create client`.
+Set the following:
+- `Client type`: `OpenID Connect`
+- `ClientID`: something of your choice such as `keycloak-oidc`
+- `Name`: something of your choice such as `keycloak-oidc`
+
+Click `Next`, tick `Client authentication`
+Click `Next`. Set
+- `Valid redirect URIs`: `*` (the wildcard allows allow redirect URIs, which will simplify our setup, no need to declare every new Nextcloud instance, the config works for all of them)
+- `Valid post logout redirect URIs`: `*`
+
+### Configure the keycloak client in Nextcloud
+
+- Install the user_oidc app.
+- Go to `admin settings > OpenID Connect`, click the `+` next to `Registered providers`
+- set an `Identifier`, such as `keycloak-oidc`
+- set the `clientID`, which the one of the keycloak client defined above
+- set the `client secret`, which the one of the keycloak client, that you can find in keycloak under `clients > keycloak-oidc (or your client name) > Credentials > Client Secret`
+- set the `Discovery endpoint`, that you can find in keycloak at the very bottom of the `Realm settings` page.
+- set `user ID mapping` to `preferred_username` which is keycloak default for userID.
+- for our local tests, it is fine to untick `Use unique user ID` (do not do that in production)
+
+Submit, and you should be good to go.
+
+Alternatively, you can use the CLI method with `php occ`:
+
+```sh
+# enable the app
+php occ app:enable user_oidc
+
+# set its configuration
+php occ user_oidc:provider keycloak-oidc \
+                --clientid="keycloak-oidc" \
+                --clientsecret="YOUR KEYCLOAK CLIENT SECRET" \
+                --discoveryuri="https://keycloak.example.org/realms/master/.well-known/openid-configuration" \
+                --mapping-uid="preferred_username" \
+                --unique-uid=0 \
+                --send-id-token-hint=1
+
+# optional: disable other login methods
+php occ config:app:set --type=string --value=0 user_oidc allow_multiple_user_backends
+```
+
+
 
 ## Reference articles about running keycloak with docker
 - https://www.keycloak.org/getting-started/getting-started-docker

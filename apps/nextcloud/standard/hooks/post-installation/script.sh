@@ -7,7 +7,6 @@ php occ app:disable survey_client
 
 # enable apps
 php occ app:enable notify_push
-php occ app:enable user_oidc
 
 # change skeletion
 mkdir -p /var/www/html/data/skeleton/Documents
@@ -38,4 +37,19 @@ php occ config:system:set allow_local_remote_servers --value='true'
 php occ maintenance:repair --include-expensive
 php occ db:add-missing-indices
 
+
+
+
+# configure user_oidc
+php occ app:enable user_oidc
+
+php occ user_oidc:provider keycloak-oidc \
+                --clientid="keycloak-oidc" \
+                --clientsecret="L5OOFHWSEnt6oM3urkwGgwTDpONpCpCL" \
+                --discoveryuri="https://keycloak.local.mlh.ovh/realms/master/.well-known/openid-configuration" \
+                --mapping-uid="preferred_username" \
+                --unique-uid=0 \
+                --send-id-token-hint=1
+
+php occ config:app:set --type=string --value=0 user_oidc allow_multiple_user_backends
 
