@@ -24,7 +24,7 @@ EOF
 
 # set DNS resolution rules for your local environment
 
-cat << EOF | sudo tee /etc/NetworkManager/dnsmasq.d/01-localDNS.conf
+cat << EOF | sudo tee /etc/NetworkManager/dnsmasq.d/100-localDNS.conf
 
 # /etc/NetworkManager/dnsmasq.d/01-localDNS.conf
 # This file sets up the local lablab domain and 
@@ -41,7 +41,7 @@ address=/.local.YOURDOMAIN.org/172.19.0.1
 EOF
 
 # configure DNS masqplugin to also read in /etc/hosts
-cat << EOF | sudo tee /etc/NetworkManager/dnsmasq.d/02-add-hosts.conf
+cat << EOF | sudo tee /etc/NetworkManager/dnsmasq.d/200-add-hosts.conf
 
 # /etc/NetworkManager/dnsmasq.d/02-add-hosts.conf
 # By default, the plugin does not read from /etc/hosts.  
