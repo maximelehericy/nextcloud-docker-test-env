@@ -81,9 +81,9 @@ dns_ovh_application_key
 On your host system, create a file to store those credentials:
 
 ```
-sudo mkdir /root/.secrets
-sudo mkdir /root/.secrets/certbot
-sudo nano /root/.secrets/certbot/ovh.ini
+mkdir /root/.secrets
+mkdir /root/.secrets/certbot
+nano /root/.secrets/certbot/ovh.ini
 ```
 
 Paste the following content in the file
@@ -107,7 +107,7 @@ chmod 600 /root/.secrets/certbot/ovh.ini
 Run the certificate request according DNS challenge against OVH API. For example, to get a certificate for *local.yourdomain.ovh* and *\*.local.yourdomain.ovh*, run:
 
 ```sh
-sudo certbot certonly --dns-ovh \
+certbot certonly --dns-ovh \
 --dns-ovh-credentials /root/.secrets/certbot/ovh.ini \
 -d local.yourdomain.ovh -d *.local.yourdomain.ovh
 ```
@@ -121,19 +121,43 @@ The command should return `Successfully received certificate.` and tell you its 
 Run:
 
 ```sh
-sudo certbot renew
+certbot renew
 ```
 
 **Automatically**
 
-Add certificate renewal in your crontab
+Add certificate renewal in your crontab. For this, you can use a little script:
 
 ```sh
-sudo crontab -e
+nano /root/certbot_renew.sh
 ```
 
 ```sh
-sudo certbot renew
+#!bin/bash
+
+cd /root/
+source certbot/bin/activate
+
+echo $(date "+%Y-%m-%d %H:%M:%S") >> certbot_renewal_attempts.log
+certbot renew
+```
+
+make the script executable and trigger the script with the crontab:
+```sh
+chmod u+x /root/certbot_renew.sh
+crontab -e
+```
+
+For example, to renew every mnday at 1PM:
+
+```
+0 13 * * 1 bash /root/certbot_renew.sh
+```
+
+Check renewal in certbor logs:
+
+```sh
+tail /var/log/letsencrypt/letsencrypt.log
 ```
 
 ## Reference articles
