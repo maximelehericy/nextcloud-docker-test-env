@@ -109,7 +109,7 @@ Add the following entry to your `/etc/hosts` file: `172.19.0.1 signalingserver.Y
 
 ## Test your signaling server is working properly
 
-curl -i https://signaling-server.local.mlh.ovh/standalone-signaling/api/v1/welcome
+curl -i https://signalingserver.local.mlh.ovh/standalone-signaling/api/v1/welcome
 
 ## Connect your Nextcloud instance to the signaling server
 
