@@ -45,7 +45,7 @@ php occ app:enable user_oidc
 
 php occ user_oidc:provider keycloak-oidc \
                 --clientid="keycloak-oidc" \
-                --clientsecret="L5OOFHWSEnt6oM3urkwGgwTDpONpCpCL" \
+                --clientsecret="cEbNhfE7NjuzH6VaS3wsus2MKKDkfLyy" \
                 --discoveryuri="https://keycloak.local.mlh.ovh/realms/master/.well-known/openid-configuration" \
                 --mapping-uid="preferred_username" \
                 --unique-uid=0 \
