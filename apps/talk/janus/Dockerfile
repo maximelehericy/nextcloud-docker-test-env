@@ -47,5 +47,5 @@ RUN mkdir -p /usr/src/janus && \
 WORKDIR /usr/src/janus/janus-gateway-$JANUS_VERSION
 
 EXPOSE 8188
-EXPOSE 20000-40000/UDP
+EXPOSE 20000-40000/udp
 CMD [ "janus" ]
