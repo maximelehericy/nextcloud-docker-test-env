@@ -54,7 +54,7 @@ docker run \
     --network apps \
     --restart unless-stopped \
     --volume ${PWD}/apps/talkrecording/server.conf:/etc/nextcloud-talk-recording/server.conf:ro \
-    --name talkrecording -d talkrecording:v0.1.8000
+    --name talkrecording -d talkrecording:v0.1
 ```
 
 To stop the containers:
@@ -126,7 +126,12 @@ Go to your Nextcloud instance `Avatar > Administration settings > Talk`.
 In the `Recording backend` section, set the parameters as follow:
 - high-performance backend URL: `https://talkrecording.YOURDOMAIN`
 - tick the `Validate SSL certificate` checkbox
-- in the `Shared secret` set `the-shared-secret-for-internal-clients`
+- in the `Shared secret` set `the-shared-secret-for-allow-all` (/!\ be careful, the recording backend has two secrets: one to allow a connection from the Nextcloud server, and a second one that allows the connection of the recording backend to the signaling server)
 
 You should be all set to record your first call !
 
+Alternatively, use the following `occ` command to setup your recording server:
+
+```sh
+php occ config:app:set spreed recording_servers --value='{"servers":[{"server":"https://talkrecording.YOURDOMAIN","verify":true}],"secret":"the-shared-secret-for-allowall"}'
+```
