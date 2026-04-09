@@ -14,7 +14,7 @@ networks:
 
 services:
   nextcloud:
-    image: nextcloud:32
+    image: nextcloud:33
     restart: unless-stopped
     networks:
       - apps
@@ -38,7 +38,7 @@ services:
       - cache
 
   cron:
-    image: nextcloud:32
+    image: nextcloud:33
     restart: unless-stopped
     networks:
       - apps

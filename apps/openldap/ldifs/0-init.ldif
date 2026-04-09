@@ -58,7 +58,7 @@ description: Alice Russel
 cn: Alice Russel
 sn: Russel
 uid: alice
-mail: alice@mail.local.mlh.ovh
+mail: alice@local.mlh.ovh
 userPassword: alice
 uidNumber: 20001
 gidNumber: 20001
@@ -73,7 +73,7 @@ description: Bobby Fisher
 cn: Bobby Fischer
 sn: Ficher
 uid: bob
-mail: bob@mail.local.mlh.ovh
+mail: bob@local.mlh.ovh
 userPassword: bob
 uidNumber: 20002
 gidNumber: 20002
@@ -88,7 +88,7 @@ description: Charlie Dalin
 cn: Charlie Dalin
 sn: Dalin
 uid: charlie
-mail: charlie@mail.local.mlh.ovh
+mail: charlie@local.mlh.ovh
 userPassword: charlie
 uidNumber: 20003
 gidNumber: 20003
@@ -103,7 +103,7 @@ description: David Crocket
 cn: David Crocket
 sn: Crocket
 uid: david
-mail: david@mail.local.mlh.ovh
+mail: david@local.mlh.ovh
 userPassword: david
 uidNumber: 20004
 gidNumber: 20004
@@ -118,7 +118,7 @@ description: Eve Longoria
 cn: Eve
 sn: Longoria
 uid: eve
-mail: eve@mail.local.mlh.ovh
+mail: eve@local.mlh.ovh
 userPassword: eve
 uidNumber: 20005
 gidNumber: 20005
@@ -133,26 +133,26 @@ description: Francis Coppola
 cn: Francis
 sn: Coppola
 uid: francis
-mail: francis@mail.local.mlh.ovh
+mail: francis@local.mlh.ovh
 userPassword: francis
 uidNumber: 20006
 gidNumber: 20006
 homeDirectory: /home/francis
 
 
-dn: uid=georges,ou=people,dc=local,dc=org
+dn: uid=georgina,ou=people,dc=local,dc=org
 objectClass: posixAccount
 objectClass: shadowAccount
 objectClass: inetOrgPerson
-description: Georges Washington
-cn: Georges
+description: Georgina Washington
+cn: Georgina
 sn: Washington
-uid: georges
-mail: georges@mail.local.mlh.ovh
-userPassword: georges
+uid: georgina
+mail: georgina@local.mlh.ovh
+userPassword: georgina
 uidNumber: 20007
 gidNumber: 20007
-homeDirectory: /home/georges
+homeDirectory: /home/georgina
 
 
 
@@ -162,6 +162,7 @@ homeDirectory: /home/georges
 ## create groups and user-group mapping
 ## need to be placed after people creation
 
+#### Nexctcloud Users
 
 dn: cn=nextcloud,ou=groups,dc=local,dc=org
 objectclass: groupOfNames
@@ -173,3 +174,90 @@ member: uid=charlie,ou=people,dc=local,dc=org
 member: uid=david,ou=people,dc=local,dc=org
 member: uid=eve,ou=people,dc=local,dc=org
 member: uid=francis,ou=people,dc=local,dc=org
+
+
+
+#### Internal Users
+
+dn: cn=internal,ou=groups,dc=local,dc=org
+objectclass: groupOfNames
+cn: internal
+description: internal users
+member: uid=alice,ou=people,dc=local,dc=org
+member: uid=bob,ou=people,dc=local,dc=org
+member: uid=charlie,ou=people,dc=local,dc=org
+
+
+
+#### External Users
+
+dn: cn=external,ou=groups,dc=local,dc=org
+objectclass: groupOfNames
+cn: external
+description: external users
+member: uid=david,ou=people,dc=local,dc=org
+member: uid=eve,ou=people,dc=local,dc=org
+member: uid=francis,ou=people,dc=local,dc=org
+
+
+
+#### Group_A
+
+dn: cn=Group_A,ou=groups,dc=local,dc=org
+objectclass: groupOfNames
+cn: Group_A
+description: Group_A
+member: uid=alice,ou=people,dc=local,dc=org
+member: uid=bob,ou=people,dc=local,dc=org
+member: uid=charlie,ou=people,dc=local,dc=org
+
+
+
+#### Group_B
+
+dn: cn=Group_B,ou=groups,dc=local,dc=org
+objectclass: groupOfNames
+cn: Group_B
+description: Group_B
+member: uid=alice,ou=people,dc=local,dc=org
+member: uid=bob,ou=people,dc=local,dc=org
+member: uid=charlie,ou=people,dc=local,dc=org
+
+
+
+#### Group_C
+
+dn: cn=Group_C,ou=groups,dc=local,dc=org
+objectclass: groupOfNames
+cn: Group_C
+description: Group_C
+member: uid=alice,ou=people,dc=local,dc=org
+member: uid=bob,ou=people,dc=local,dc=org
+member: uid=charlie,ou=people,dc=local,dc=org
+
+
+
+#### Group_D
+
+dn: cn=Group_D,ou=groups,dc=local,dc=org
+objectclass: groupOfNames
+cn: Group_D
+description: Group_D
+member: uid=alice,ou=people,dc=local,dc=org
+member: uid=bob,ou=people,dc=local,dc=org
+member: uid=charlie,ou=people,dc=local,dc=org
+
+
+
+#### Group_E
+
+dn: cn=Group_E,ou=groups,dc=local,dc=org
+objectclass: groupOfNames
+cn: Group_E
+description: Group_E
+member: uid=alice,ou=people,dc=local,dc=org
+member: uid=bob,ou=people,dc=local,dc=org
+member: uid=charlie,ou=people,dc=local,dc=org
+
+
+

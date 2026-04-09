@@ -37,7 +37,7 @@ do
 
     fullName="$givenName $familyName"
     uid=$(echo "${givenName~}.${familyName~}" | sed "s/[' ]//g" | tr '[:upper:]' '[:lower:]')
-    email="$uid@mail.local.mlh.ovh"
+    email="$uid@local.mlh.ovh"
 
     echo $givenName $familyName
     echo $fullName
@@ -53,7 +53,7 @@ objectClass: inetOrgPerson
 cn: $givenName $familyName
 sn: $familyName
 uid: $uid
-mail: $uid@mail.local.mlh.ovh
+mail: $uid@local.mlh.ovh
 userPassword: $uid
 uidNumber: $i
 gidNumber: $i
