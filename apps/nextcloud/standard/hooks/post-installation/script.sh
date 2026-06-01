@@ -40,16 +40,10 @@ php occ db:add-missing-indices
 
 
 
-# configure user_oidc
-php occ app:enable user_oidc
 
-php occ user_oidc:provider keycloak-oidc \
-                --clientid="keycloak-oidc" \
-                --clientsecret="cEbNhfE7NjuzH6VaS3wsus2MKKDkfLyy" \
-                --discoveryuri="https://keycloak.local.mlh.ovh/realms/master/.well-known/openid-configuration" \
-                --mapping-uid="preferred_username" \
-                --unique-uid=0 \
-                --send-id-token-hint=1
-
-php occ config:app:set --type=string --value=0 user_oidc allow_multiple_user_backends
-
+for username in alice bob charlie david eve #francis georgina helene iori jeanne karola laura maxence nicole oriane pauline quentin romane sandra tomaso ulia victor william xavier yaya zeno
+do 
+    export OC_PASS=$username
+    displayName="$(echo "${username^}" | awk '{print $0 " " substr($0, 1, 1)}')"
+    php occ user:add --password-from-env --display-name="$displayName" $username
+done
